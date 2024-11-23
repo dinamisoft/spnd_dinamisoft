@@ -7,10 +7,9 @@ Ficha:
 Integrantes:
 
 1. Johan Aguilar
-2. Luis Arzusa
-3. Samuel Puche
-4. Santiago Ricaurte
-5. Juan Gabriel Serrano Anaya
+2. Samuel Puche
+3. Santiago Ricaurte
+4. Juan Gabriel Serrano Anaya
 
 OBJETIVO:
 crear un sistema de navegacion eficiente para prevenir y controlar la diabetes de los usuarios, permitiendo agilizar el dictamen con informacion enviada al cuerpo médico, para garantizar que la información que se maneja sea confiable y en tiempo real.
