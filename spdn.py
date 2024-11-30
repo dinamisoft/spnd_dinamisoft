@@ -17,7 +17,21 @@ pacientes = [72293057,"Juan Gabriel","Serrano Anaya","Barranquilla"]
 
 
 # 01. Sección de Creación de Pacientes
+def registro_persona():
+    print("Digite sus datos personales a continuacion")
+    id = int(input("Ingrese su numero de documento: "))
+    nombres = str(input("Ingrese sus nombres: "))
+    apellidos = str(input("Ingrese sus apellidos: "))
+    direccion = str(input("Ingrese su direccion: "))
+    telefono = int(input("Ingrese su numero de telefono: "))
+    barrio = str(input("Ingrese el nombre de su barrio: "))
+    ciudad = str(input("Ingrese la ciudad: "))
+    departamento = str(input("Ingrese el departamento: "))
+    print()
+    print("La persona registrada es",nombres, "con apellidos",apellidos, "y documento", id) 
+    print ("con direccion", direccion, "telefono", telefono, "del barrio", barrio, "de la ciudad" , ciudad, "y departamento del ", departamento)
 
+    registro_persona()
 
 
 
