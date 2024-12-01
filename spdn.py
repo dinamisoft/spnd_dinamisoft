@@ -37,6 +37,7 @@ def registro_persona():
 
 # 02. Sección Ingresar datos de nivel de glucosa
 def clasificar_presion():
+  #datos fecha hora
   fecha = input("Ingrese la fecha (dd/mm/aaa): ")
   hora = input("Ingrese la hora (hh:mm): ")
   ayuna = input("¿Se encuentra en ayuna?: ")
