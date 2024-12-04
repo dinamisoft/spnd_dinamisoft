@@ -1,7 +1,7 @@
 # Archivo principal para el proyecto de Dinamisoft
 
 #Librerías para importar
-from ast import If
+#from ast import If
 import os
 
 
@@ -33,8 +33,8 @@ def menu_principal():
                 except ValueError:  # Maneja el error si el usuario no ingresa un número válido
                         print ("Por favor ingresa un número válido")
                         continue  # Regresa al inicio del bucle para mostrar el menú nuevamente
-                if opcion == 1:
-                                registropacientes()  # Llama a la función para registrar pacientes
+                if (opcion == 1):
+                                registro_pacientes()  # Llama a la función para registrar pacientes
                 elif (opcion == 2):
                                 clasificar_presion()  # Llama a la función para ingresar datos de presión
                 elif (opcion == 3):
@@ -52,7 +52,7 @@ menu_principal()
 
 
 # 01. Sección de Creación de Pacientes
-def registro_persona():
+def registro_pacientes():
     print("Digite sus datos personales a continuacion")
     id = int(input("Ingrese su numero de documento: "))
     nombres = str(input("Ingrese sus nombres: "))
@@ -66,7 +66,7 @@ def registro_persona():
     print("La persona registrada es",nombres, "con apellidos",apellidos, "y documento", id) 
     print ("con direccion", direccion, "telefono", telefono, "del barrio", barrio, "de la ciudad" , ciudad, "y departamento del ", departamento)
 
-    registro_persona()
+    registro_pacientes()
 
 
 
@@ -125,10 +125,10 @@ print(" Módulo de Consultas")
 print("*********************")
 print("\nSeleccione la consulta que va a realizar")
 consulta_cedula = int(input("Digite la cédula del paciente: "))
-If (consulta_cedula = pacientes):
-    print(pacientes)
+if(consulta_cedula == pacientes):
+  print(pacientes)
 else:
-    print("No se encuentra información con la cédula ingresada.")
+  print("No se encuentra información con la cédula ingresada.")
 
 
 
@@ -148,6 +148,6 @@ else:
 
 # 05. Sección Salir del Sistema
 
-
+print("Gracias por utilizar nuestro sistema")
 
 
