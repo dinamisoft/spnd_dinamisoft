@@ -9,13 +9,10 @@ import os
 # variables y listados para pruebas unitarias
 #pacientes = [72293057,"Juan Gabriel","Serrano Anaya","Barranquilla"]
 
-# Main
-id = 0
-nombres = ''
-
 
 # 01. Sección de Creación de Pacientes
 def registro_pacientes():
+    global id, nombres, apellidos, direccion, telefono, barrio, ciudad, departamento
     print("Digite sus datos personales a continuacion")
     id = int(input("Ingrese su numero de documento: "))
     nombres = str(input("Ingrese sus nombres: "))
@@ -31,11 +28,10 @@ def registro_pacientes():
 
 
 
-
-
 # 02. Sección Ingresar datos de nivel de glucosa
 def clasificar_presion():
   #datos fecha hora
+  global fecha, hora, ayuna, sistolica, diastolica
   fecha = input("Ingrese la fecha (dd/mm/aaa): ")
   hora = input("Ingrese la hora (hh:mm): ")
   ayuna = input("¿Se encuentra en ayuna?: ")
@@ -88,16 +84,14 @@ def consultar_registros():
   print("\nSeleccione la consulta que va a realizar")
   consulta_cedula = int(input("Digite la cédula del paciente: "))
   if(consulta_cedula == id):
-    print("Paciente: ",nombres)
+    print("Información del Paciente")
+    print("\nIdentificación: ",id,"\nNombres: ", nombres,'\nApellidos: ',apellidos)
+    print("Dirección: ",direccion,"\nTeléfono: ",telefono,"\nBarrio: ",barrio,"\nCiudad: ",ciudad,"\nDepartamento: ",departamento)
+    print("\nREGISTRO DE NIVELES DE GLUCOSA")
+    print("\nFECHA: ",fecha,"\nHORA: ",hora,"\nEN AYUNAS: ",ayuna)
+    print("\nVALORESPRESIÓN SISTÓLICA: ",sistolica,"\nPRESIÓN DIASTÓLICA: ", diastolica)
   else:
     print("No se encuentra información con la cédula ingresada.")
-
-
-
-
-
-
-
 
 
 
@@ -105,7 +99,6 @@ def consultar_registros():
 
 def reportes():
   print("Sección de reportes")
-
 
 
 
@@ -144,23 +137,14 @@ def menu_principal():
                                 break  # Rompe el bucle para terminar el programa
                 else:
                                 print ("Solo hay opciones del 1 al 5")  # Mensaje de error para opciones fuera de rango
-                
+
+
+
 # Llama a la función principal para iniciar el programa
 menu_principal()
 
 
-
-
-
-
-
-
-
-
-
-
 # 05. Sección Salir del Sistema
-
 print("Gracias por utilizar nuestro sistema")
 
 
