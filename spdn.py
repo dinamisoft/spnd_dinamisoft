@@ -12,19 +12,27 @@ import os
 
 # 01. Sección de Creación de Pacientes
 def registro_pacientes():
-    global id, nombres, apellidos, direccion, telefono, barrio, ciudad, departamento
+    global id, nombres, apellidos, edad, genero, direccion, telefono, barrio, ciudad, departamento
     print("Digite sus datos personales a continuacion")
     id = int(input("Ingrese su numero de documento: "))
     nombres = str(input("Ingrese sus nombres: "))
     apellidos = str(input("Ingrese sus apellidos: "))
+    edad = str(input("Ingrese su edad: "))
+    genero = str(input("Ingrese su genero: "))
     direccion = str(input("Ingrese su direccion: "))
     telefono = int(input("Ingrese su numero de telefono: "))
     barrio = str(input("Ingrese el nombre de su barrio: "))
     ciudad = str(input("Ingrese la ciudad: "))
     departamento = str(input("Ingrese el departamento: "))
     print()
-    print("La persona registrada es",nombres, "con apellidos",apellidos, "y documento", id) 
+    print("La persona registrada es",nombres, "con apellidos",apellidos, "y documento", id, "edad",edad, "genero",genero) 
     print ("con direccion", direccion, "telefono", telefono, "del barrio", barrio, "de la ciudad" , ciudad, "y departamento del ", departamento)
+    #La variable usuario contiene los datos del usuario a guardar y los que se van a escribir en el archivo txt
+    usuarios = f"\nIdentificación: {id}\nNombre: {nombres} {apellidos}\nEdad: {edad}\nGenero: {genero}\nDirección: {direccion}\nBarrio: {barrio}\nCiudad: {ciudad}\nDepartamento: {departamento}\nTelefono: {telefono}\n"
+    #El with open crea o llama el archivo donde se guardaran los datos del paciente
+    #Con el archivo.write(usuarios) indicamos que es lo que queremos que se escriba en el archivo txt en este caso la variable usuario que contiene los datos asignados a guardar
+    with open("Datos_usuarios.txt", "a") as archivo:
+          archivo.write(usuarios)
 
 
 
@@ -41,37 +49,44 @@ def clasificar_presion():
 
   #Rangos de valores de presión para saber si es hipotensión
   if sistolica < 91 and diastolica < 63:
-    print("Hipotensión\n¿Se programa la entrega? si")
+    resultados_niveles = "Hipotensión\n¿Se programa la entrega? si"
 
   #Rangos de valores de presión para saber si es ideal
   elif 91 <= sistolica <= 134 and 63 <= diastolica <= 77:
-    print("Ideal\n¿Se programa la entrega? no")
+    resultados_niveles = "Ideal\n¿Se programa la entrega? no"
 
   #Rangos de valores de presión para saber si es normal
   elif 134 <= sistolica <= 162 and 77 <= diastolica <= 105:
-    print("Normal\n¿Se programa la entrega? no")
+    resultados_niveles = "Normal\n¿Se programa la entrega? no"
 
   #Rangos de valores de presión para saber si es normal-alta  
   elif 162 <= sistolica <= 188 and 105 <= diastolica <= 119:
-    print("Normal-alta\n¿Se programa la entrega? si")
+    resultados_niveles = "Normal-alta\n¿Se programa la entrega? si"
 
   #Rangos de valores de presión para saber si es grado 1  
   elif 188 <= sistolica <= 201 and 119 <= diastolica <= 126:
-    print("HTA Grado 1\n¿Se programa la entrega? si")
+    resultados_niveles = "HTA Grado 1\n¿Se programa la entrega? si"
 
   #Rangos de valores de presión para saber si es grado2
   elif 201 <= sistolica <= 214 and 126 <= diastolica <= 146:
-    print("HTA Grado 2\n¿Se programa la entrega? si")
+    resultados_niveles = "HTA Grado 2\n¿Se programa la entrega? si"
 
   #Rangos de valores de presión para saber si es grado 3  
   elif sistolica >= 214 and diastolica >= 146:  
-    print("HTA Grado 3\n¿Se programa la entrega? si")
+    resultados_niveles= "HTA Grado 3\n¿Se programa la entrega? si"
 
   #Rangos de valores de presión para saber si es hipertencio solo sitolica  
   elif sistolica >= 152 and diastolica < 77:
-    print("Hipertensión Solo Sistólica\n¿Se programa la entrega? si")
+    resultados_niveles = "Hipertensión Solo Sistólica\n¿Se programa la entrega? si"
   else:
     return "Valores fuera de rango"
+  print(resultados_niveles)
+  #La variable usuario contiene la fecha, hora, niveles y rsultados a guardar, los cuales se van a escribir en el archivo txt
+  usuarios = f"\nFecha: {fecha}\nHora: {hora}\nAyuna: {ayuna}\nNivel de presión sitólica: {sistolica}\nNivel de presión diastólica: {diastolica}\nResultado: {resultados_niveles}\n"
+  #El with open crea o llama el archivo donde se guardaran los datos del paciente
+  #Con el archivo.write(usuarios) indicamos que es lo que queremos que se escriba en el archivo txt en este caso la variable usuario que contiene los datos asignados a guardar
+  with open("Datos_usuarios.txt", "a") as archivo:
+        archivo.write(usuarios)
 
 
 # 03. Sección Consultar registros de glucosa
